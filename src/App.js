@@ -4,6 +4,7 @@ import { Cart } from "./components/cart/Cart";
 import { Header } from "./components/Header";
 import { Home } from "./components/home/Home";
 import { cartDb } from "./DB";
+import { MouseMove } from "./MouseMove";
 import { GlobalStyle } from "./styles/GlobalStyle";
 
 function App() {

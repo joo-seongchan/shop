@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { cartDb, menuDb } from "../../DB";
 
@@ -41,8 +42,18 @@ const Button = styled.div`
 `;
 
 export const Home = () => {
+  const [xy, setXy] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    setXy({ x: e.clientX, y: e.clientY });
+    console.log(e.clientX);
+  };
+
   return (
-    <Section>
+    <Section
+      onMouseMove={(e) => {
+        handleMouseMove(e);
+      }}
+    >
       <Container>
         <ConWrap>
           {menuDb.map((menu) => (
@@ -64,6 +75,9 @@ export const Home = () => {
             </Con>
           ))}
         </ConWrap>
+        <div style={{ position: "absolute", left: xy.x + 20, top: xy.y + 20 }}>
+          Nike
+        </div>
       </Container>
     </Section>
   );
