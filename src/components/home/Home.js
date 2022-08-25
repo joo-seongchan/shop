@@ -78,6 +78,50 @@ export const Home = () => {
         <div style={{ position: "absolute", left: xy.x + 20, top: xy.y + 20 }}>
           Nike
         </div>
+        <div
+          style={{
+            transition: "0.05s",
+            opacity: "0.8",
+            position: "absolute",
+            left: xy.x + 20,
+            top: xy.y + 20,
+          }}
+        >
+          Nike
+        </div>
+        <div
+          style={{
+            transition: "0.2s",
+            opacity: "0.6",
+            position: "absolute",
+            left: xy.x + 20,
+            top: xy.y + 20,
+          }}
+        >
+          Nike
+        </div>
+        <div
+          style={{
+            transition: "0.15s",
+            opacity: "0.4",
+            position: "absolute",
+            left: xy.x + 20,
+            top: xy.y + 20,
+          }}
+        >
+          Nike
+        </div>
+        <div
+          style={{
+            transition: "0.2s",
+            opacity: "0.2",
+            position: "absolute",
+            left: xy.x + 20,
+            top: xy.y + 20,
+          }}
+        >
+          Nike
+        </div>
       </Container>
     </Section>
   );
