@@ -67,7 +67,6 @@ export const Home = () => {
                   if (check.length === 0) {
                     cartDb.push(menu);
                   }
-                  console.log(cartDb);
                 }}
               >
                 장바구니 추가 +

@@ -4,6 +4,7 @@ import { cartDb } from "../../DB";
 
 const Section = styled.div`
   padding: 100px 220px;
+  min-height: 100vh;
 `;
 const TTitle = styled.div`
   font-size: 60px;
@@ -42,8 +43,17 @@ const Button = styled.div`
 
 export const Cart = () => {
   const [cart, setCartDb] = useState(cartDb);
+  const [xy, setXy] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    setXy({ x: e.clientX, y: e.clientY });
+    console.log(e.clientX);
+  };
   return (
-    <Section>
+    <Section
+      onMouseMove={(e) => {
+        handleMouseMove(e);
+      }}
+    >
       <TTitle>장바구니</TTitle>
       <ConWrap>
         {cart.map((menu) => (
@@ -67,6 +77,53 @@ export const Cart = () => {
           </Con>
         ))}
       </ConWrap>
+      <div style={{ position: "absolute", left: xy.x + 20, top: xy.y + 20 }}>
+        Nike
+      </div>
+      <div
+        style={{
+          transition: "0.05s",
+          opacity: "0.8",
+          position: "absolute",
+          left: xy.x + 20,
+          top: xy.y + 20,
+        }}
+      >
+        Nike
+      </div>
+      <div
+        style={{
+          transition: "0.2s",
+          opacity: "0.6",
+          position: "absolute",
+          left: xy.x + 20,
+          top: xy.y + 20,
+        }}
+      >
+        Nike
+      </div>
+      <div
+        style={{
+          transition: "0.15s",
+          opacity: "0.4",
+          position: "absolute",
+          left: xy.x + 20,
+          top: xy.y + 20,
+        }}
+      >
+        Nike
+      </div>
+      <div
+        style={{
+          transition: "0.2s",
+          opacity: "0.2",
+          position: "absolute",
+          left: xy.x + 20,
+          top: xy.y + 20,
+        }}
+      >
+        Nike
+      </div>
     </Section>
   );
 };
